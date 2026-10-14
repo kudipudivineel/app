@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10243a" />
+  <title>Tatkal Ready | Booking Assistant</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div><p class="eyebrow">TRAVEL PREPARATION</p><h1>Tatkal Ready</h1></div>
+    <a class="button primary" href="https://www.irctc.co.in/nget/train-search" target="_blank" rel="noopener noreferrer">Open official IRCTC ↗</a>
+  </header>
+  <main>
+    <section class="hero card">
+      <div><p class="eyebrow">YOUR BOOKING WORKSPACE</p><h2>Prepare ahead. Book through official channels.</h2><p class="muted">Keep your trip plan, traveller details, and checklist in one place. Details are saved in this browser only.</p></div>
+      <div class="countdown"><span class="muted">Time until your planned booking</span><strong id="countdown">Set a date and time</strong><label for="booking-time">Booking date &amp; time</label><input id="booking-time" type="datetime-local" /></div>
+    </section>
+    <section class="grid">
+      <article class="card">
+        <div class="section-heading"><div><p class="eyebrow">01 / JOURNEY</p><h2>Trip details</h2></div></div>
+        <form id="trip-form" class="stack">
+          <div class="two"><label>From station<input id="from" placeholder="e.g. HYB" required /></label><label>To station<input id="to" placeholder="e.g. MAS" required /></label></div>
+          <div class="two"><label>Journey date<input id="journey-date" type="date" required /></label><label>Train number/name<input id="train" placeholder="Optional" /></label></div>
+          <button class="button primary" type="submit">Save trip</button>
+        </form>
+        <p id="trip-summary" class="saved muted">No trip saved yet.</p>
+      </article>
+      <article class="card">
+        <div class="section-heading"><div><p class="eyebrow">02 / TRAVELLERS</p><h2>Passenger profiles</h2></div></div>
+        <form id="passenger-form" class="stack">
+          <label>Full name<input id="passenger-name" autocomplete="name" required maxlength="100" placeholder="Passenger name" /></label>
+          <div class="two"><label>Age<input id="passenger-age" type="number" min="0" max="120" required /></label><label>Gender<select id="passenger-gender" required><option value="">Select</option><option>Male</option><option>Female</option><option>Transgender</option></select></label></div>
+          <label>Berth preference<select id="berth"><option>No preference</option><option>Lower</option><option>Middle</option><option>Upper</option><option>Side Lower</option><option>Side Upper</option></select></label>
+          <button class="button primary" type="submit">Add passenger</button>
+        </form>
+        <div id="passenger-list" class="passenger-list"><p class="muted">No passenger profiles added.</p></div>
+        <p class="hint">Avoid saving passwords, OTPs, payment details, Aadhaar numbers, or other sensitive identifiers here.</p>
+      </article>
+    </section>
+    <section class="card">
+      <div class="section-heading"><div><p class="eyebrow">03 / BEFORE YOU BOOK</p><h2>Readiness checklist</h2></div><span id="check-progress" class="pill">0 of 5 complete</span></div>
+      <div id="checklist" class="checklist">
+        <label><input type="checkbox" data-check="trip" /> Confirm train, journey date, and route</label>
+        <label><input type="checkbox" data-check="passengers" /> Verify passenger names and ages</label>
+        <label><input type="checkbox" data-check="account" /> Sign in to the official IRCTC service in advance</label>
+        <label><input type="checkbox" data-check="payment" /> Keep an approved payment method ready</label>
+        <label><input type="checkbox" data-check="network" /> Check your internet connection and device</label>
+      </div>
+      <div class="footer-actions"><button id="reset-checklist" class="button secondary" type="button">Reset checklist</button><a class="button primary" href="https://www.irctc.co.in/nget/train-search" target="_blank" rel="noopener noreferrer">Continue to IRCTC ↗</a></div>
+    </section>
+    <p class="disclaimer">This is an independent preparation tool, not an IRCTC product. It does not check live seat availability or book tickets. Confirm current Tatkal rules, timings, and requirements on official IRCTC channels.</p>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
